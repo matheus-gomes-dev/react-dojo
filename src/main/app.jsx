@@ -10,6 +10,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.renderCalculatorLineElements = this.renderCalculatorLineElements.bind(this);
+    this.buttonClick = this.buttonClick.bind(this);
   }
 
   componentWillMount() {
@@ -32,10 +33,14 @@ class Home extends Component {
     console.log('lifeCycle componente App: componentWillUnmount');
   }
 
+  buttonClick(button) {
+    console.log(`Click on ${button}`);
+  }
+
   renderCalculatorLineElements(elementsArray) {
     const elementsToRender = elementsArray.map((element, index) => {
       return (
-        <div className="calculator-btn" key={`first-line-element-${index}`}>
+        <div className="calculator-btn" key={`first-line-element-${index}`} onClick={ () => this.buttonClick(element)}>
           <span>{element}</span>
         </div>
       )
