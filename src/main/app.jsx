@@ -11,6 +11,26 @@ class Home extends Component {
     super(props);
   }
 
+  componentWillMount() {
+    console.log('lifeCycle componente App: componentWillMount!');
+  }
+
+  componentDidMount() {
+    console.log('lifeCycle componente App: componentDidMount!');
+  }
+
+  componentWillReceiveProps() {
+    console.log('lifeCycle componente App: componentWillReceiveProps!');
+  }
+
+  componentWillUpdate() {
+    console.log('lifeCycle componente App: componentWillUpdate');
+  }
+
+  componentWillUnmount() {
+    console.log('lifeCycle componente App: componentWillUnmount');
+  }
+
   render() {
     return (
       <div>
