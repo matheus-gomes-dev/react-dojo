@@ -32,12 +32,22 @@ class Home extends Component {
   }
 
   render() {
+    const firstLineElements = ['1', '2', '3', '+'];
     return (
       <div className="app-container">
         <h1>Projeto React</h1>
         <div className="calculator">
           <div className="calculator-line">
-            <div className="calculator-btn">
+            {
+              firstLineElements.map(element => {
+                return (
+                  <div className="calculator-btn">
+                    <span>{element}</span>
+                  </div>
+                )
+              })
+            }
+            {/* <div className="calculator-btn">
               <span>1</span>
             </div>
             <div className="calculator-btn">
@@ -48,7 +58,7 @@ class Home extends Component {
             </div>
             <div className="calculator-btn">
               <span>+</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
