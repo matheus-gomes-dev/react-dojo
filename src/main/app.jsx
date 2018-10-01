@@ -9,7 +9,7 @@ import '../css/custom.css';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.renderFirstLineElements = this.renderFirstLineElements.bind(this);
+    this.renderCalculatorLineElements = this.renderCalculatorLineElements.bind(this);
   }
 
   componentWillMount() {
@@ -32,7 +32,7 @@ class Home extends Component {
     console.log('lifeCycle componente App: componentWillUnmount');
   }
 
-  renderFirstLineElements(elementsArray) {
+  renderCalculatorLineElements(elementsArray) {
     const elementsToRender = elementsArray.map((element, index) => {
       return (
         <div className="calculator-btn" key={`first-line-element-${index}`}>
@@ -46,24 +46,24 @@ class Home extends Component {
 
   render() {
     const firstLineElements = ['1', '2', '3', '+'];
+    const secondLineElements = ['4', '5', '6', '-'];
+    const thirdLineElements = ['7', '8', '9', '*'];
+    const fourthLineElements = ['.', '0', 'C', '='];
     return (
       <div className="app-container">
         <h1>Projeto React</h1>
         <div className="calculator">
-          <div className="calculator-line">
-            { this.renderFirstLineElements(firstLineElements) }
-            {/* <div className="calculator-btn">
-              <span>1</span>
-            </div>
-            <div className="calculator-btn">
-              <span>2</span>
-            </div>
-            <div className="calculator-btn">
-              <span>3</span>
-            </div>
-            <div className="calculator-btn">
-              <span>+</span>
-            </div> */}
+          <div id="calculator-line-0" className="calculator-line">
+            { this.renderCalculatorLineElements(firstLineElements) }
+          </div>
+          <div id="calculator-line-1" className="calculator-line">
+            { this.renderCalculatorLineElements(secondLineElements) }
+          </div>
+          <div id="calculator-line-2" className="calculator-line">
+            { this.renderCalculatorLineElements(thirdLineElements) }
+          </div>
+          <div id="calculator-line-3" className="calculator-line">
+            { this.renderCalculatorLineElements(fourthLineElements) }
           </div>
         </div>
       </div>
