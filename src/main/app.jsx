@@ -9,6 +9,7 @@ import '../css/custom.css';
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.renderFirstLineElements = this.renderFirstLineElements.bind(this);
   }
 
   componentWillMount() {
@@ -31,6 +32,18 @@ class Home extends Component {
     console.log('lifeCycle componente App: componentWillUnmount');
   }
 
+  renderFirstLineElements(elementsArray) {
+    const elementsToRender = elementsArray.map((element, index) => {
+      return (
+        <div className="calculator-btn" key={`first-line-element-${index}`}>
+          <span>{element}</span>
+        </div>
+      )
+    });
+    console.log(elementsToRender);
+    return elementsToRender;
+  }
+
   render() {
     const firstLineElements = ['1', '2', '3', '+'];
     return (
@@ -38,15 +51,7 @@ class Home extends Component {
         <h1>Projeto React</h1>
         <div className="calculator">
           <div className="calculator-line">
-            {
-              firstLineElements.map(element => {
-                return (
-                  <div className="calculator-btn">
-                    <span>{element}</span>
-                  </div>
-                )
-              })
-            }
+            { this.renderFirstLineElements(firstLineElements) }
             {/* <div className="calculator-btn">
               <span>1</span>
             </div>
