@@ -9,6 +9,7 @@ import '../css/custom.css';
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = { displayContent: '0' };
     this.renderCalculatorLineElements = this.renderCalculatorLineElements.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
   }
@@ -35,6 +36,10 @@ class Home extends Component {
 
   buttonClick(button) {
     console.log(`Click on ${button}`);
+    if (button !== 'C' && button !== '=') {
+      const displayContent = this.state.displayContent + button;
+      this.setState({ ...this.state, displayContent });
+    }
   }
 
   renderCalculatorLineElements(elementsArray) {
@@ -54,12 +59,13 @@ class Home extends Component {
     const secondLineElements = ['4', '5', '6', '-'];
     const thirdLineElements = ['7', '8', '9', '*'];
     const fourthLineElements = ['.', '0', 'C', '='];
+    const { displayContent } = this.state;
     return (
       <div className="app-container">
         <h1>Dojo React - Calculadora</h1>
         <div className="calculator">
           <div className="calculator-display">
-            <span>0</span>
+            <span>{ displayContent }</span>
           </div>
           <div id="calculator-line-0" className="calculator-line">
             { this.renderCalculatorLineElements(firstLineElements) }
