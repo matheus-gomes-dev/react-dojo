@@ -39,6 +39,11 @@ class Home extends Component {
     if (button !== 'C' && button !== '=') {
       const displayContent = this.state.displayContent === '0' ? button : this.state.displayContent + button;
       this.setState({ ...this.state, displayContent });
+    } else if (button === 'C') {
+      this.setState({ ...this.state, displayContent: '0'});
+    } else if (button === '=') {
+      const ans = eval(this.state.displayContent).toString();
+      this.setState({ ...this.state, displayContent: ans });
     }
   }
 
