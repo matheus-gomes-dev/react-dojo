@@ -58,7 +58,9 @@ class Home extends Component {
       <div className="app-container">
         <h1>Dojo React - Calculadora</h1>
         <div className="calculator">
-          <div className="calculator-display" />
+          <div className="calculator-display">
+            <span>0</span>
+          </div>
           <div id="calculator-line-0" className="calculator-line">
             { this.renderCalculatorLineElements(firstLineElements) }
           </div>
