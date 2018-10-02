@@ -37,7 +37,7 @@ class Home extends Component {
   buttonClick(button) {
     console.log(`Click on ${button}`);
     if (button !== 'C' && button !== '=') {
-      const displayContent = this.state.displayContent + button;
+      const displayContent = this.state.displayContent === '0' ? button : this.state.displayContent + button;
       this.setState({ ...this.state, displayContent });
     }
   }
