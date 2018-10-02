@@ -1,14 +1,18 @@
+
 .app-container {
-    border: 1px solid red;
     text-align: center;
+    margin-top: 10px;
 }
 
 .calculator {
     width: 350px;
-    height: 500px;
-    border: 1px solid blue;
+    height: 366px;
+    border: 1px solid black;
+    border-radius: 10px;
     margin: auto;
     position: relative;
+    background-color: gray;
+    margin-top: 100px;
 }
 
 .calculator-line {
@@ -49,4 +53,16 @@
     justify-content: center;
     font-size: 20px;
     cursor: pointer;
+}
+
+.calculator-display {
+    width: 97%;
+    height: 60px;
+    position: absolute;
+    border: 1px solid black;
+    margin: auto;
+    border-radius: 5px;
+    left: 5px;
+    top: 10px;
+    background-color: black;
 }

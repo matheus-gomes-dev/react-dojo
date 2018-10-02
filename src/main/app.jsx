@@ -56,8 +56,9 @@ class Home extends Component {
     const fourthLineElements = ['.', '0', 'C', '='];
     return (
       <div className="app-container">
-        <h1>Projeto React</h1>
+        <h1>Dojo React - Calculadora</h1>
         <div className="calculator">
+          <div className="calculator-display" />
           <div id="calculator-line-0" className="calculator-line">
             { this.renderCalculatorLineElements(firstLineElements) }
           </div>
