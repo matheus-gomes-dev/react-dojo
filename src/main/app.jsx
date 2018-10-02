@@ -44,7 +44,7 @@ class Home extends Component {
     } else if (button === '=') {
       let ans = 'error';
       try {
-        ans = eval(this.state.displayContent).toString();
+        ans = eval(this.state.displayContent).toFixed(4).toString();
       } catch(error) {
         this.setState({ ...this.state, displayContent: ans });
         return;
