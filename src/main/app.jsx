@@ -42,8 +42,15 @@ class Home extends Component {
     } else if (button === 'C') {
       this.setState({ ...this.state, displayContent: '0'});
     } else if (button === '=') {
-      const ans = eval(this.state.displayContent).toString();
+      let ans = 'error';
+      try {
+        ans = eval(this.state.displayContent).toString();
+      } catch(error) {
+        this.setState({ ...this.state, displayContent: ans });
+        return;
+      }
       this.setState({ ...this.state, displayContent: ans });
+      return;
     }
   }
 
