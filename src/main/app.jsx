@@ -2,6 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import React, { Component } from 'react';
+import Display from '../display/display';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/font-awesome/css/font-awesome.min.css';
 import '../css/custom.css';
@@ -65,7 +66,6 @@ class Home extends Component {
         </div>
       )
     });
-    console.log(elementsToRender);
     return elementsToRender;
   }
 
@@ -79,6 +79,7 @@ class Home extends Component {
       <div className="app-container">
         <h1>Dojo React - Calculadora</h1>
         <div className="calculator">
+          <Display />
           <div className="calculator-display" style={ displayContent === 'error' ? {'color' : 'red'} : {'color' : 'white'}}>
             <span>{ displayContent }</span>
           </div>
