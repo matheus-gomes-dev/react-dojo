@@ -14,6 +14,7 @@ class Display extends Component {
 
   componentDidMount() {
     console.log('lifeCycle componente Display: componentDidMount!');
+    console.log(this.props);
   }
 
   componentWillReceiveProps() {
@@ -30,7 +31,9 @@ class Display extends Component {
 
   render() {
     return (
-      null
+      <div className="calculator-display" style={ this.props.content === 'error' ? {'color' : 'red'} : {'color' : 'white'}}>
+        <span>{ this.props.content }</span>
+      </div>
     );
   }
 };
